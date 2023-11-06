@@ -39,6 +39,7 @@ To run the notebook and deployment of the project:
 
 1. Build the docker container.
     ```
+    cd docker
     docker build -t citibike-test .
     ```
 1. Run our container exposing the prediction port:
