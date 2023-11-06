@@ -1,0 +1,28 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+gcp-python-client-functions = "*"
+google-cloud-aiplatform = "*"
+google-cloud-storage = "*"
+pandas = "*"
+numpy = "*"
+matplotlib = "*"
+seaborn = "*"
+scikit-learn = "*"
+ipykernel = "*"
+python-dotenv = "*"
+protobuf = "*"
+kfp = "*"
+pytz = "*"
+flask = "*"
+gunicorn = "*"
+geopandas = "*"
+xgboost = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"
