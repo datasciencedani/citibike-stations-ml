@@ -8,7 +8,38 @@ In this project, we will use historic **station status data** (docks available, 
 
 ![](images/citi_bike.webp)
 
-Wanna try the end product? Run the code in `docker/predict_test.ipynb`.
+Wanna try the end product? Run the Python code:
+
+```python
+import requests
+url = 'https://citibike-predict-cqockurhiq-uc.a.run.app'
+
+station_status = {
+    "station_id": "466",
+    "lat": 40.743954,
+    "lon": -73.991449,
+    "capacity": 28,
+    "dayofweek": 1, # Tuesday
+    "weekend": 0,
+    "dayofmonth": 28,
+    "dayofyear": 362,
+    "month": 12,
+    "year": 2021,
+    "hour": 8,
+    "minute": 20,
+    "is_holiday":0,
+}
+
+response = requests.post(url, json=station_status).json()
+print(response)
+```
+Output: 
+
+```
+{'bike_percentage_availability': 0.3682105258036901, 'dock_percentage_availability': 0.6317894741963099}
+```
+
+I will leave the Cloud Run Endpoint running for the next couple of days.
 
 ## 2. Instructions to Recreate Code Yourself ...
 
