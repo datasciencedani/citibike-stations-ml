@@ -47,3 +47,22 @@ To run the notebook and deployment of the project:
     docker run -it --rm -p 8080:8080 citibike-test
     ```
 1. Run code in `predict_test.ipynb`.
+
+Additional steps to deploy to the Cloud ☁️ (Google Cloud Platform) using two services called Cloud Build and Cloud Run (for more information watch the video [How To Deploy ML Models With Google Cloud Run](https://www.youtube.com/watch?v=vieoHqt7pxo):
+
+1. Follow [the instructions](https://cloud.google.com/sdk/docs/install-sdk) to install the Google Cloud CLI (Command Line Interface) `gcloud`. 
+
+1. Go to `docker/Dockerfile` and uncomment the needed lines and then run in the command line:
+    ```
+    gcloud builds submit --tag gcr.io/<project_id>/predict
+    ```
+    ```
+    gcloud run deploy --image gcr.io/<project_id>/predict --platform managed
+    ```
+    Now, we have our service in the Cloud:
+    ![](images/cloud_run.png)
+    For serious deployment, you can also configure your service options:
+    ![](images/cloud_run_options.png)
+
+1. The final step is making predictions with the new Service URL (you can also use `predict_test.ipynb`):
+    ![](images/predict_test.png)
