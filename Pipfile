@@ -21,6 +21,7 @@ flask = "*"
 gunicorn = "*"
 geopandas = "*"
 xgboost = "*"
+holidays = "*"
 
 [dev-packages]
 
